@@ -1,0 +1,51 @@
+  .Dashboard-header {
+    background-color: #021635;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(30px + 2vmin);
+    color: white;
+  }
+  
+  body {
+    background-color: white;
+  }
+  #h1_title {
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+
+  .site-card-wrapper {
+    margin-top: 5px;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .mainDash {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    width: 80%;
+  }
+  .dashboard-alert{
+    right: 50%;
+    left: 50%;
+    position: absolute;
+    border: red solid 2px;
+  }
+  .mainDash Table {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .ant-card-body {
+    text-align: center;
+    
+  }
+
+

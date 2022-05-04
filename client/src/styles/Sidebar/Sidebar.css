@@ -1,0 +1,20 @@
+
+#log-out {
+  margin-top: 80px;
+}
+
+.sidebarDiv {
+  width: auto;
+}
+.ant-menu.ant-menu-inline-collapsed {
+  width: 60px;
+  margin-left: left;
+}
+
+.ant-menu.ant-menu-inline {
+  width: auto;
+}
+
+.ant-menu-title-content{
+  align-items: left;
+}

@@ -1,0 +1,20 @@
+
+#node-card {
+  width: 400vh;
+}
+#data-card {
+  width: 300px;
+}
+
+
+
+.ant-collapse {
+  height: auto;
+  max-width: 300px;
+  display: flex;  
+  flex-direction: column;
+}
+.ant-collapse-content>.ant-collapse-content-box
+{
+  padding: 5px;
+}

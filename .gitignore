@@ -1,0 +1,7 @@
+sensor/WESAD
+influxdb
+node_modules
+client/node_modules
+docs/*
+config/*
+.env

@@ -1,0 +1,42 @@
+@media all and (min-width: 480px) {
+
+  .Module-header {
+    background-color: #021635;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(30px + 2vmin);
+    color: white;
+  }
+  
+    .modules-content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .info-btn {
+      right: 100px;
+      top: 110px;
+      position: absolute;
+    }
+
+    .ant-radio-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+
+    }
+
+    #input_source{
+      width: 340px;
+      position: absolute;
+      margin-top: -15px; 
+  }
+    /* #python_script{
+       width: 340px; 
+      position: absolute;
+      margin-top: -15px;  
+  } */
+  }

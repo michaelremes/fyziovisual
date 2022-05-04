@@ -1,0 +1,32 @@
+/* .input-graph {
+  height: auto;
+  width: auto;
+} */
+
+.ant-card {
+  width: 400vh;
+}
+
+/* .input-graph {
+  height: auto;
+  width: auto;
+  display: flex;  
+  flex-direction: column;
+}
+.input-settings {
+  height: auto;
+  width: auto;
+  display: flex;  
+  flex-direction: column;
+} */
+
+.ant-collapse {
+  height: auto;
+  width: auto;
+  display: flex;  
+  flex-direction: column;
+}
+.ant-collapse-content>.ant-collapse-content-box
+{
+  padding: 5px;
+}

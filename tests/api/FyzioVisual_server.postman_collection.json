@@ -1,0 +1,761 @@
+{
+	"info": {
+		"_postman_id": "87fad70d-f66d-4aa4-ad26-49f240178b92",
+		"name": "FyzioVisual_server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pipelines",
+			"item": [
+				{
+					"name": "get pipelines",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/pipelines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add pipeline",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"moje_prvni\",\r\n    \"author\": \"tomas.kalvoda@fyziovisual.cz\",\r\n    \"data\": [\r\n        {\r\n    \"id\": \"1\",\r\n    \"type\": \"fv_input\",\r\n    \"data\": {\r\n      \"label\": \"Input node\"\r\n            },\r\n    \"position\": { \"x\": 100, \"y\": 100\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/pipelines/add/pipeline",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"add",
+								"pipeline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pipeline",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/pipelines/delete/61f44a10594b512c7b87c329",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"delete",
+								"61f44a10594b512c7b87c329"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pipeline",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"author\": \"test@fyziovisual.cz\",\r\n    \"data\": [\r\n        {\r\n            \"id\": \"dndnode_2\",\r\n            \"type\": \"fv_output\",\r\n            \"label\": \"InfluxDB\",\r\n            \"position\": {\r\n                \"x\": 973,\r\n                \"y\": 249.109375\r\n            },\r\n            \"data\": {\r\n                \"label\": \"InfluxDB\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"dndnode_3\",\r\n            \"type\": \"fv_input\",\r\n            \"label\": \"EKG signál\",\r\n            \"position\": {\r\n                \"x\": 256,\r\n                \"y\": 149\r\n            },\r\n            \"data\": {\r\n                \"label\": \"EKG signál\"\r\n            }\r\n        },\r\n        {\r\n            \"source\": \"dndnode_3\",\r\n            \"sourceHandle\": null,\r\n            \"target\": \"dndnode_2\",\r\n            \"targetHandle\": \"handle\",\r\n            \"type\": \"buttonedge\",\r\n            \"data\": {},\r\n            \"animated\": false,\r\n            \"id\": \"reactflow__edge-dndnode_3null-dndnode_2handle\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/pipelines/update/621626e18502575093c93968",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"update",
+								"621626e18502575093c93968"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "run pipelines ecg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/pipelines/run/62514a9b3b4d2fb2b62518a1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"run",
+								"62514a9b3b4d2fb2b62518a1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stop pipeline",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/pipelines/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "run pipelines resp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/pipelines/run/625131f66e5144a983bc595e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"pipelines",
+								"run",
+								"625131f66e5144a983bc595e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"first_name\",\r\n    \"last_name\": \"last_name\",\r\n    \"email\": \"name@mail.com\",\r\n    \"role\": \"admin\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/add/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"add",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/users/delete/61f67ca9876c110391667bea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"delete",
+								"61f67ca9876c110391667bea"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61f513cead1ebf8143fe1ae3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Helena\",\r\n    \"last_name\": \"Novotna\",\r\n    \"email\": \"hel.novotna@gmail.com\",\r\n    \"role\": \"guest\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/update/61f67c7b764f1a0db8b54ae4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"update",
+								"61f67c7b764f1a0db8b54ae4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@mail.cm\",\r\n    \"password\": \"tests\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modules",
+			"item": [
+				{
+					"name": "Input_Module",
+					"item": [
+						{
+							"name": "get ECG",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/modules/sensor/ecg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"modules",
+										"sensor",
+										"ecg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get respiration",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/modules/ecg/s4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"modules",
+										"ecg",
+										"s4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get temperature",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/modules/ecg/s4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"modules",
+										"ecg",
+										"s4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get modules",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/modules/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"modules",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add module",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ekg signal\",\r\n    \"category\": \"input\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/modules/add/module",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"modules",
+								"add",
+								"module"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete module",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/modules/delete/620bab02acc5fc23bb51f0c2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"modules",
+								"delete",
+								"620bab02acc5fc23bb51f0c2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61f513cead1ebf8143fe1ae3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update module",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Succes message included!\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(`\\\"message\\\":\\\"success\\\"`);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ecg_signal\",\r\n    \"category\": \"input\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/modules/update/620bab02acc5fc23bb51f0c2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"modules",
+								"update",
+								"620bab02acc5fc23bb51f0c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get bpm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/modules/bpm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"modules",
+								"bpm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
