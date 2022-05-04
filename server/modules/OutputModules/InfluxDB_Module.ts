@@ -43,7 +43,7 @@ class InfluxDB_Module extends Output_Module {
     loadBuffer(): void {
         for (let source of this.sources) {
             let childrenData = source.getData();
-          //  this.writeData(childrenData.flatten(), childrenData.getDataType())
+            this.writeData(childrenData.flatten(), childrenData.getDataType())
         }
     }
 
